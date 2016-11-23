@@ -68,13 +68,13 @@ public interface Attribute<X, Y> {
    */
   PersistentAttributeType getPersistentAttributeType();
 
-  /**
-   * Return the managed type representing the type in which
-   * the attribute was declared.
-   *
-   * @return declaring type
-   */
-  ManagedType<X> getDeclaringType();
+//  /**
+//   * Return the managed type representing the type in which
+//   * the attribute was declared.
+//   *
+//   * @return declaring type
+//   */
+//  ManagedType<X> getDeclaringType();
 
   /**
    * Return the Java type of the represented attribute.
