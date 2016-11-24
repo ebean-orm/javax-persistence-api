@@ -9,6 +9,7 @@
  */
 package javax.persistence;
 
+import java.lang.annotation.Repeatable;
 import java.lang.annotation.Retention;
 import java.lang.annotation.Target;
 
@@ -24,6 +25,7 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
  */
 @Target({METHOD, FIELD, TYPE})
 @Retention(RUNTIME)
+@Repeatable(Converts.class)
 public @interface Convert {
   /**
    * Specifies the converter to be applied. A value for this

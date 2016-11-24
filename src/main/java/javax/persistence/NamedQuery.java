@@ -9,6 +9,7 @@
  */
 package javax.persistence;
 
+import java.lang.annotation.Repeatable;
 import java.lang.annotation.Retention;
 import java.lang.annotation.Target;
 
@@ -44,6 +45,7 @@ import static javax.persistence.LockModeType.NONE;
  */
 @Target({TYPE})
 @Retention(RUNTIME)
+@Repeatable(NamedQueries.class)
 public @interface NamedQuery {
   /**
    * (Required) The name used to refer to the query with the {@link EntityManager} methods that create query

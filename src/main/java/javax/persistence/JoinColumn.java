@@ -9,6 +9,7 @@
  */
 package javax.persistence;
 
+import java.lang.annotation.Repeatable;
 import java.lang.annotation.Retention;
 import java.lang.annotation.Target;
 
@@ -45,6 +46,7 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
  */
 @Target({METHOD, FIELD})
 @Retention(RUNTIME)
+@Repeatable(JoinColumns.class)
 public @interface JoinColumn {
 
   /**

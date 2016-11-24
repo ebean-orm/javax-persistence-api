@@ -9,6 +9,7 @@
  */
 package javax.persistence;
 
+import java.lang.annotation.Repeatable;
 import java.lang.annotation.Retention;
 import java.lang.annotation.Target;
 
@@ -55,6 +56,7 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
  */
 @Target(TYPE)
 @Retention(RUNTIME)
+@Repeatable(NamedStoredProcedureQueries.class)
 public @interface NamedStoredProcedureQuery {
   /**
    * The name used to refer to the query with the {@link EntityManager} methods that create stored

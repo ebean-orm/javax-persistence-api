@@ -9,6 +9,7 @@
  */
 package javax.persistence;
 
+import java.lang.annotation.Repeatable;
 import java.lang.annotation.Retention;
 import java.lang.annotation.Target;
 
@@ -23,6 +24,7 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
  */
 @Target({TYPE, METHOD, FIELD})
 @Retention(RUNTIME)
+@Repeatable(PersistenceUnits.class)
 public @interface PersistenceUnit {
   /**
    * (Optional) The name by which the entity manager factory is to be accessed

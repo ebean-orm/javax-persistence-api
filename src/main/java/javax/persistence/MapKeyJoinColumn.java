@@ -9,6 +9,7 @@
  */
 package javax.persistence;
 
+import java.lang.annotation.Repeatable;
 import java.lang.annotation.Retention;
 import java.lang.annotation.Target;
 
@@ -82,6 +83,7 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
  */
 @Target({METHOD, FIELD})
 @Retention(RUNTIME)
+@Repeatable(MapKeyJoinColumns.class)
 public @interface MapKeyJoinColumn {
   /**
    * (Optional) The name of the foreign key column for the map key. The table in which it is found depends
