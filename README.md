@@ -7,6 +7,9 @@ Refer to the JPA spec at http://java.net/projects/jpa-spec/downloads
 
 ## Differences from JPA standard
 
+The following are changes in the persistence-api that have not yet been officially 
+approved and released.
+
 - Add @Repeatable to annotations that can be repeated (JPA_SPEC-115)
 https://github.com/ebean-orm/javax-persistence-api/issues/1
 
