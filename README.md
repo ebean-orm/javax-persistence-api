@@ -5,6 +5,14 @@ use with Ebean ORM and is compiled to Java 8.
 
 Refer to the JPA spec at http://java.net/projects/jpa-spec/downloads
 
+## Differences from JPA standard
+
+- Add @Repeatable to annotations that can be repeated (JPA_SPEC-115)
+https://github.com/ebean-orm/javax-persistence-api/issues/1
+
+- Add prefix mechanism to @Embedded (as per JPA_SPEC-23) 
+https://github.com/ebean-orm/javax-persistence-api/issues/2
+
 
 ## Legal
 
