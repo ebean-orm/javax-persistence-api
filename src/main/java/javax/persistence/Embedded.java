@@ -47,4 +47,52 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
 @Target({METHOD, FIELD})
 @Retention(RUNTIME)
 public @interface Embedded {
+
+  /**
+   * WARNING: This is an Ebean extension (not yet part of JPA standard, refer to JPA_SPEC-23).
+   * <p>
+   * When specified all the properties in the embedded bean have a prefix applied to their DB column name.
+   * </p>
+   * <h3>Example:</h3>
+   * <p/>
+   * <pre>{@code
+   *
+   *  @Entity
+   *  public class Invoice {
+   *    ...
+   *
+   *    @Embedded(prefix="ship_")
+   *    Address shipAddress;
+   *
+   *    @Embedded(prefix="bill_")
+   *    Address billAddress;
+   *
+   * }</pre>
+   * <p>
+   * Without this extension we need to specify AttributeOverride on each property like:
+   * </p>
+   * <pre>{@code
+   *
+   *  @Entity
+   *  public class Invoice {
+   *    ...
+   *
+   *    @Embedded
+   *    @AttributeOverride(name = "street", column = @Column(name = "ship_street"))
+   *    @AttributeOverride(name = "suburb", column = @Column(name = "ship_suburb"))
+   *    @AttributeOverride(name = "city", column = @Column(name = "ship_city"))
+   *    @AttributeOverride(name = "status", column = @Column(name = "ship_status"))
+   *    Address shipAddress;
+   *
+   *
+   *    @Embedded
+   *    @AttributeOverride(name = "street", column = @Column(name = "bill_street"))
+   *    @AttributeOverride(name = "suburb", column = @Column(name = "bill_suburb"))
+   *    @AttributeOverride(name = "city", column = @Column(name = "bill_city"))
+   *    @AttributeOverride(name = "status", column = @Column(name = "bill_status"))
+   *    Address billAddress;
+   *
+   * }</pre>
+   */
+  String prefix() default "";
 }
