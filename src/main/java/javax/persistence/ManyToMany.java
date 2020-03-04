@@ -44,24 +44,24 @@ import static javax.persistence.FetchType.LAZY;
  *
  *    &#064;ManyToMany
  *    &#064;JoinTable(name="CUST_PHONES")
- *    public Set&#060;PhoneNumber&#062; getPhones() { return phones; }
+ *    Set&#060;PhoneNumber&#062; phones;
  *
  *    // In PhoneNumber class:
  *
  *    &#064;ManyToMany(mappedBy="phones")
- *    public Set&#060;Customer&#062; getCustomers() { return customers; }
+ *    Set&#060;Customer&#062; customers;
  *
  *    Example 2:
  *
  *    // In Customer class:
  *
  *    &#064;ManyToMany(targetEntity=com.acme.PhoneNumber.class)
- *    public Set getPhones() { return phones; }
+ *    Set phones;
  *
  *    // In PhoneNumber class:
  *
  *    &#064;ManyToMany(targetEntity=com.acme.Customer.class, mappedBy="phones")
- *    public Set getCustomers() { return customers; }
+ *    Set customers;
  *
  *    Example 3:
  *
@@ -74,12 +74,12 @@ import static javax.persistence.FetchType.LAZY;
  *        inverseJoinColumns=
  *            &#064;JoinColumn(name="PHONE_ID", referencedColumnName="ID")
  *        )
- *    public Set&#060;PhoneNumber&#062; getPhones() { return phones; }
+ *    Set&#060;PhoneNumber&#062; phones;
  *
  *    // In PhoneNumberClass:
  *
  *    &#064;ManyToMany(mappedBy="phones")
- *    public Set&#060;Customer&#062; getCustomers() { return customers; }
+ *    Set&#060;Customer&#062; customers;
  * </pre>
  *
  * @see JoinTable

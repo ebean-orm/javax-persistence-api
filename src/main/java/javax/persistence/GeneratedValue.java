@@ -35,14 +35,8 @@ import static javax.persistence.GenerationType.AUTO;
  *     &#064;Id
  *     &#064;GeneratedValue(strategy=SEQUENCE, generator="CUST_SEQ")
  *     &#064;Column(name="CUST_ID")
- *     public Long getId() { return id; }
- *
- *     Example 2:
- *
- *     &#064;Id
- *     &#064;GeneratedValue(strategy=TABLE, generator="CUST_GEN")
- *     &#064;Column(name="CUST_ID")
  *     Long id;
+ *
  * </pre>
  *
  * @see Id

@@ -37,7 +37,7 @@ import static javax.persistence.FetchType.EAGER;
  *
  *     &#064;ManyToOne(optional=false)
  *     &#064;JoinColumn(name="CUST_ID", nullable=false, updatable=false)
- *     public Customer getCustomer() { return customer; }
+ *     Customer customer;
  *
  *
  *     Example 2:

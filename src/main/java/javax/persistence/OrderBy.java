@@ -53,7 +53,7 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
  *       ...
  *       &#064;ManyToMany
  *       &#064;OrderBy("lastname ASC")
- *       public List&#060;Student&#062; getStudents() {...};
+ *       List&#060;Student&#062; students;
  *       ...
  *    }
  *
@@ -64,7 +64,7 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
  *       ...
  *       &#064;ManyToMany(mappedBy="students")
  *       &#064;OrderBy // ordering by primary key is assumed
- *       public List&#060;Course&#062; getCourses() {...};
+ *       List&#060;Course&#062; courses;
  *       ...
  *    }
  *
@@ -75,7 +75,7 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
  *         ...
  *       &#064;ElementCollection
  *       &#064;OrderBy("zipcode.zip, zipcode.plusFour")
- *       public Set&#060;Address&#062; getResidences() {...};
+ *       Set&#060;Address&#062; residences;
  *       ...
  *    }
  *

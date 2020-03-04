@@ -35,7 +35,7 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
  *   Example:
  *
  *   &#064;Id
- *   public Long getId() { return id; }
+ *   Long id;
  * </pre>
  *
  * @see Column

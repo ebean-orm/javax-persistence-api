@@ -37,13 +37,13 @@ import static javax.persistence.FetchType.LAZY;
  *    // In Customer class:
  *
  *    &#064;OneToMany(cascade=ALL, mappedBy="customer")
- *    public Set&#060;Order&#062; getOrders() { return orders; }
+ *    Set&#060;Order&#062; orders;
  *
  *    In Order class:
  *
  *    &#064;ManyToOne
  *    &#064;JoinColumn(name="CUST_ID", nullable=false)
- *    public Customer getCustomer() { return customer; }
+ *    Customer customer;
  *
  *
  *    Example 2: One-to-Many association without using generics
@@ -52,13 +52,13 @@ import static javax.persistence.FetchType.LAZY;
  *
  *    &#064;OneToMany(targetEntity=com.acme.Order.class, cascade=ALL,
  *                mappedBy="customer")
- *    public Set getOrders() { return orders; }
+ *    Set orders;
  *
  *    // In Order class:
  *
  *    &#064;ManyToOne
  *    &#064;JoinColumn(name="CUST_ID", nullable=false)
- *    public Customer getCustomer() { return customer; }
+ *    Customer customer;
  *
  *
  *    Example 3: Unidirectional One-to-Many association using a foreign key mapping
@@ -67,7 +67,7 @@ import static javax.persistence.FetchType.LAZY;
  *
  *    &#064;OneToMany(orphanRemoval=true)
  *    &#064;JoinColumn(name="CUST_ID") // join column is in table for Order
- *    public Set&#060;Order&#062; getOrders() {return orders;}
+ *    Set&#060;Order&#062; orders;
  *
  * </pre>
  *

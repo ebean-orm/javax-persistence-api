@@ -39,8 +39,7 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
  *    Example:
  *
  *    &#064;Version
- *    &#064;Column(name="OPTLOCK")
- *    protected int getVersionNum() { return versionNum; }
+ *    int version;
  * </pre>
  *
  * @since Java Persistence 1.0

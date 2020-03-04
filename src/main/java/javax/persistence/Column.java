@@ -25,7 +25,7 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
  *    Example 1:
  * <p>
  *    &#064;Column(name="DESC", nullable=false, length=512)
- *    public String getDescription() { return description; }
+ *    String description;
  * <p>
  *    Example 2:
  * <p>
@@ -33,18 +33,18 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
  *            columnDefinition="CLOB NOT NULL",
  *            table="EMP_DETAIL")
  *    &#064;Lob
- *    public String getDescription() { return description; }
+ *    String description;
  * <p>
  *    Example 3:
  * <p>
  *    &#064;Column(name="ORDER_COST", updatable=false, precision=12, scale=2)
- *    public BigDecimal getCost() { return cost; }
+ *    BigDecimal cost;
  * <p>
  * </pre></blockquote>
  *
  * @since Java Persistence 1.0
  */
-@Target({METHOD, FIELD, ANNOTATION_TYPE})
+@Target({FIELD, ANNOTATION_TYPE})
 @Retention(RUNTIME)
 public @interface Column {
 

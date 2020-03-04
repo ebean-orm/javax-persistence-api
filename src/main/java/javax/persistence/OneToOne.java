@@ -39,12 +39,12 @@ import static javax.persistence.FetchType.EAGER;
  *    &#064;OneToOne(optional=false)
  *    &#064;JoinColumn(
  *    	name="CUSTREC_ID", unique=true, nullable=false, updatable=false)
- *    public CustomerRecord getCustomerRecord() { return customerRecord; }
+ *    CustomerRecord customerRecord;
  *
  *    // On CustomerRecord class:
  *
  *    &#064;OneToOne(optional=false, mappedBy="customerRecord")
- *    public Customer getCustomer() { return customer; }
+ *    Customer customer;
  *
  *
  *    Example 2: One-to-one association that assumes both the source and target share the same primary key values.

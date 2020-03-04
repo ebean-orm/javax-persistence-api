@@ -43,11 +43,6 @@ import static javax.persistence.FetchType.EAGER;
  *    &#064;Basic
  *    protected String name;
  *
- *    Example 2:
- *
- *    &#064;Basic(fetch=LAZY)
- *    protected String getName() { return name; }
- *
  * </pre>
  *
  * @since Java Persistence 1.0
