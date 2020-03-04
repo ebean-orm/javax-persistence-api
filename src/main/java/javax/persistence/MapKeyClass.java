@@ -13,7 +13,6 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.Target;
 
 import static java.lang.annotation.ElementType.FIELD;
-import static java.lang.annotation.ElementType.METHOD;
 import static java.lang.annotation.RetentionPolicy.RUNTIME;
 
 /**
@@ -83,7 +82,7 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
  * @see ManyToMany
  * @since Java Persistence 2.0
  */
-@Target({METHOD, FIELD})
+@Target({FIELD})
 @Retention(RUNTIME)
 public @interface MapKeyClass {
   /**

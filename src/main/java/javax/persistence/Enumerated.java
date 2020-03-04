@@ -13,7 +13,6 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.Target;
 
 import static java.lang.annotation.ElementType.FIELD;
-import static java.lang.annotation.ElementType.METHOD;
 import static java.lang.annotation.RetentionPolicy.RUNTIME;
 import static javax.persistence.EnumType.ORDINAL;
 
@@ -46,7 +45,7 @@ import static javax.persistence.EnumType.ORDINAL;
  * @see ElementCollection
  * @since Java Persistence 1.0
  */
-@Target({METHOD, FIELD})
+@Target({FIELD})
 @Retention(RUNTIME)
 public @interface Enumerated {
 
