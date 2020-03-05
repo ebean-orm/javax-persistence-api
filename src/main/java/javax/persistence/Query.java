@@ -18,7 +18,6 @@ import java.util.Set;
 /**
  * Interface used to control query execution.
  *
- * @see TypedQuery
  * @see Parameter
  * @since Java Persistence 1.0
  */

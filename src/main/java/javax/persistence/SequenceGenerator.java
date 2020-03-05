@@ -17,9 +17,8 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
 
 /**
  * Defines a primary key generator that may be referenced by name when a generator element is specified for
- * the {@link GeneratedValue} annotation. A sequence generator may be specified on the entity class or on the
- * primary key field or property. The scope of the generator name is global to the persistence unit (across
- * all generator types).
+ * the {@link GeneratedValue} annotation. A sequence generator may be specified on the
+ * primary key field.
  * <p>
  * <pre>
  *   Example:
@@ -29,7 +28,7 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
  *
  * @since Java Persistence 1.0
  */
-@Target({TYPE, METHOD, FIELD})
+@Target({FIELD})
 @Retention(RUNTIME)
 public @interface SequenceGenerator {
   /**
