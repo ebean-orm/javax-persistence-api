@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
 
-    <groupId>io.ebean</groupId>
-    <artifactId>persistence-api</artifactId>
-    <version>2.2.5-SNAPSHOT</version>
+  <groupId>io.ebean</groupId>
+  <artifactId>persistence-api</artifactId>
+  <version>2.2.5-SNAPSHOT</version>
 
-    <parent>
-        <groupId>org.avaje</groupId>
-        <artifactId>java8-oss</artifactId>
-        <version>2.1</version>
-    </parent>
+  <parent>
+    <groupId>org.avaje</groupId>
+    <artifactId>java8-oss</artifactId>
+    <version>3.2</version>
+  </parent>
 
   <licenses>
     <license>
@@ -25,17 +26,31 @@
     <tag>HEAD</tag>
   </scm>
 
+  <!--    <properties>-->
+  <!--      <java.version>11</java.version>-->
+  <!--    </properties>-->
+
   <build>
     <plugins>
       <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-jar-plugin</artifactId>
-        <version>3.1.0</version>
-        <configuration>
-          <archive>
-            <manifestFile>src/main/resources/META-INF/MANIFEST.MF</manifestFile>
-          </archive>
-        </configuration>
+        <groupId>org.moditect</groupId>
+        <artifactId>moditect-maven-plugin</artifactId>
+        <version>1.0.0.RC1</version>
+        <executions>
+          <execution>
+            <id>add-module-infos</id>
+            <phase>package</phase>
+            <goals>
+              <goal>add-module-info</goal>
+            </goals>
+            <configuration>
+              <jvmVersion>9</jvmVersion>
+              <module>
+                <moduleInfoFile>src/main/java9/module-info.java</moduleInfoFile>
+              </module>
+            </configuration>
+          </execution>
+        </executions>
       </plugin>
     </plugins>
   </build>
