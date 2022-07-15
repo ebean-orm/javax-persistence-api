@@ -4,7 +4,7 @@
 
   <groupId>io.ebean</groupId>
   <artifactId>persistence-api</artifactId>
-  <version>3.0</version>
+  <version>3.1-SNAPSHOT</version>
 
   <parent>
     <groupId>org.avaje</groupId>
@@ -22,7 +22,7 @@
 
   <scm>
     <developerConnection>scm:git:git@github.com:ebean-orm/javax-persistence-api.git</developerConnection>
-    <tag>persistence-api-3.0</tag>
+    <tag>HEAD</tag>
   </scm>
 
 </project>
