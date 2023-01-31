@@ -24,6 +24,7 @@
 
   <modules>
     <module>javax-persistence-api</module>
+    <module>jakarta-persistence-api</module>
   </modules>
 
   <scm>

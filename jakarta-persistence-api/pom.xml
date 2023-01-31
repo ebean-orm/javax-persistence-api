@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <parent>
+    <artifactId>persistence-api</artifactId>
+    <groupId>io.ebean</groupId>
+    <version>3.1-SNAPSHOT</version>
+  </parent>
+  <modelVersion>4.0.0</modelVersion>
+
+  <artifactId>jakarta-persistence-api</artifactId>
+
+  <properties>
+    <maven.compiler.source>17</maven.compiler.source>
+    <maven.compiler.target>17</maven.compiler.target>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+  <build>
+    <plugins>
+      <plugin>
+        <artifactId>maven-antrun-plugin</artifactId>
+        <version>3.1.0</version>
+        <executions>
+          <execution>
+            <id>javax2jakarta</id>
+            <phase>generate-sources</phase>
+            <goals>
+              <goal>run</goal>
+            </goals>
+            <configuration>
+              <target>
+                <echo>${project.basedir}/src/</echo>
+                <delete dir="${project.basedir}/src"/>
+                <copy todir="${project.basedir}/src">
+                  <fileset dir="${project.basedir}/../javax-persistence-api/src"/>
+                </copy>
+                <move file="${project.basedir}/src/main/java/javax/persistence" tofile="${project.basedir}/src/main/java/jakarta/persistence"/>
+                <replace file="${project.basedir}/src/main/java/module-info.java" token="  exports javax.persistence;" value="  exports jakarta.persistence;"/>
+                <replace dir="${project.basedir}/src">
+                  <include name="**/*.java"/>
+                  <replacefilter token="package javax.persistence;"
+                                 value="package jakarta.persistence;"/>
+                  <replacefilter token="package javax.persistence."
+                                 value="package jakarta.persistence."/>
+                  <replacefilter token="import static javax.persistence."
+                                 value="import static jakarta.persistence."/>
+                </replace>
+              </target>
+            </configuration>
+          </execution>
+        </executions>
+        <dependencies>
+        </dependencies>
+      </plugin>
+    </plugins>
+  </build>
+</project>
