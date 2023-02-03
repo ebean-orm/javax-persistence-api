@@ -11,11 +11,6 @@
 
   <artifactId>jakarta-persistence-api</artifactId>
 
-  <properties>
-    <maven.compiler.source>17</maven.compiler.source>
-    <maven.compiler.target>17</maven.compiler.target>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-  </properties>
   <build>
     <plugins>
       <plugin>
@@ -31,12 +26,14 @@
             <configuration>
               <target>
                 <echo>${project.basedir}/src/</echo>
-                <delete dir="${project.basedir}/src"/>
-                <copy todir="${project.basedir}/src">
+                <delete dir="${project.basedir}/src"/><!-- not incremental -->
+                <copy todir="${project.basedir}/src"><!-- copy all src from javax module to jakarta module-->
                   <fileset dir="${project.basedir}/../javax-persistence-api/src"/>
                 </copy>
+                <!-- move into correct folder/package on filesstem-->
                 <move file="${project.basedir}/src/main/java/javax/persistence" tofile="${project.basedir}/src/main/java/jakarta/persistence"/>
                 <replace file="${project.basedir}/src/main/java/module-info.java" token="  exports javax.persistence;" value="  exports jakarta.persistence;"/>
+                <!-- replace imports and package to jakarta in java sources -->
                 <replace dir="${project.basedir}/src">
                   <include name="**/*.java"/>
                   <replacefilter token="package javax.persistence;"
