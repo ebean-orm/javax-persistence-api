@@ -99,7 +99,7 @@ public @interface Column {
    * (Optional) The column length. (Applies only if a
    * string-valued column is used.)
    */
-  int length() default 255;
+  int length() default 0;
 
   /**
    * (Optional) The precision for a decimal (exact numeric)
