@@ -1,20 +1,23 @@
 # javax-persistence-api
 
-This exists due to the JCP not provided an official JPA API jar via maven central. This definition of JPA API intended for 
+This exists due to the JCP not provided an official JPA API jar via maven central. This definition of JPA API intended for
 use with Ebean ORM and is compiled to Java 8.
 
 Refer to the JPA spec at http://java.net/projects/jpa-spec/downloads
 
 ## Differences from JPA standard
 
-The following are changes in the persistence-api that have not yet been officially 
+The following are changes in the persistence-api that have not yet been officially
 approved and released.
 
 - Add @Repeatable to annotations that can be repeated (JPA_SPEC-115)
 https://github.com/ebean-orm/javax-persistence-api/issues/1
 
-- Add prefix mechanism to @Embedded (as per JPA_SPEC-23) 
+- Add prefix mechanism to @Embedded (as per JPA_SPEC-23)
 https://github.com/ebean-orm/javax-persistence-api/issues/2
+
+- Add nullable attribute to @Embedded
+  https://github.com/ebean-orm/javax-persistence-api/pull/13
 
 
 ## Legal

@@ -4,12 +4,12 @@
   <parent>
     <groupId>org.avaje</groupId>
     <artifactId>java11-oss</artifactId>
-    <version>4.5</version>
+    <version>5.2</version>
   </parent>
 
   <groupId>io.ebean</groupId>
   <artifactId>persistence-api</artifactId>
-  <version>3.1</version>
+  <version>3.2</version>
 
   <licenses>
     <license>
