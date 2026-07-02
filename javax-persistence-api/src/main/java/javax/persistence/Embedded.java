@@ -94,4 +94,29 @@ public @interface Embedded {
    * }</pre>
    */
   String prefix() default "";
+
+  /**
+   * WARNING: This is an Ebean extension (not part of the JPA standard).
+   * <p>
+   * When set to {@code false}, the embedded bean field is never set to {@code null} when
+   * reading from the database. Instead of returning {@code null} when all embedded columns
+   * are {@code null}, an empty bean instance is returned.
+   * </p>
+   * <p>
+   * The default is {@code true}, which matches standard JPA behaviour (field is set to
+   * {@code null} when all embedded columns are {@code null}).
+   * </p>
+   * <h3>Example:</h3>
+   * <pre>{@code
+   *
+   *  @Entity
+   *  public class Customer {
+   *    ...
+   *
+   *    @Embedded(nullable = false)
+   *    Address address;
+   *
+   * }</pre>
+   */
+  boolean nullable() default true;
 }
